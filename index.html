@@ -1,1 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vitamine J — Communication, branding et création de contenu.">
+  <title>Vitamine J — Communication, branding & contenu</title>
+  <style>
+    :root{
+      --orange:#ff5a1f;
+      --cream:#f7f3ec;
+      --ink:#171512;
+      --muted:#6f6a62;
+      --line:#d9d3c9;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--cream);color:var(--ink);
+      font-family:Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1240px,calc(100% - 48px));margin:auto}
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:24px 0;font-size:13px;letter-spacing:.02em
+    }
+    .logo{font-weight:900;font-size:18px;letter-spacing:-.06em}
+    .navlinks{display:flex;gap:28px}
+    .navlinks a:hover{color:var(--orange)}
+    .hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 110px}
+    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:24px}
+    h1{
+      font-size:clamp(64px,11.5vw,172px);line-height:.82;
+      letter-spacing:-.075em;text-transform:uppercase;
+      margin:0;max-width:1150px;font-weight:900
+    }
+    h1 span{color:var(--orange);display:inline-block}
+    .hero-bottom{
+      display:flex;justify-content:space-between;align-items:flex-end;
+      gap:40px;margin-top:60px
+    }
+    .intro{max-width:530px;font-size:18px;line-height:1.45}
+    .cta{
+      display:inline-flex;align-items:center;gap:16px;
+      border:1px solid var(--ink);padding:15px 20px;
+      font-size:13px;text-transform:uppercase;letter-spacing:.08em;
+      transition:.25s
+    }
+    .cta:hover{background:var(--orange);border-color:var(--orange);transform:translateY(-3px)}
+    .dot{
+      width:72px;height:72px;background:var(--orange);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:27px;flex:none
+    }
+    section{padding:120px 0;border-top:1px solid var(--line)}
+    .manifesto{
+      min-height:65vh;display:flex;align-items:center
+    }
+    .manifesto p{
+      font-size:clamp(42px,6.2vw,88px);line-height:.98;
+      letter-spacing:-.055em;margin:0;max-width:1050px;font-weight:700
+    }
+    .manifesto em{font-style:normal;color:var(--orange)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;margin-bottom:55px}
+    .section-title{font-size:12px;text-transform:uppercase;letter-spacing:.15em}
+    .section-note{max-width:420px;color:var(--muted);line-height:1.45;font-size:15px}
+    .services{border-top:1px solid var(--ink)}
+    .service{
+      display:grid;grid-template-columns:70px 1fr auto;gap:30px;
+      padding:25px 0;border-bottom:1px solid var(--line);align-items:center
+    }
+    .num{font-size:12px;color:var(--muted)}
+    .service h3{font-size:clamp(30px,4vw,56px);letter-spacing:-.05em;margin:0;font-weight:700}
+    .service p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .arrow{font-size:28px;transition:.25s}
+    .service:hover .arrow{color:var(--orange);transform:translateX(8px)}
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .project{min-height:410px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+    .project:nth-child(1){background:#e8ded0}
+    .project:nth-child(2){background:#ddd9d0}
+    .project:nth-child(3){background:#d9e0da;grid-column:1/-1;min-height:330px}
+    .project-label{font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+    .project h3{font-size:clamp(38px,5vw,72px);line-height:.9;letter-spacing:-.06em;margin:0;max-width:700px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+    .about h2{font-size:clamp(44px,6vw,82px);line-height:.9;letter-spacing:-.06em;margin:0}
+    .about-copy{font-size:19px;line-height:1.5;max-width:520px}
+    .signature{margin-top:50px;font-weight:800}
+    .contact{
+      background:var(--orange);color:white;border-top:0;padding:110px 0
+    }
+    .contact h2{font-size:clamp(62px,11vw,150px);line-height:.8;letter-spacing:-.075em;margin:0 0 60px;text-transform:uppercase}
+    .contact .cta{border-color:white;color:white}
+    .contact .cta:hover{background:white;color:var(--orange)}
+    footer{padding:25px 0;display:flex;justify-content:space-between;font-size:12px}
+    @media(max-width:700px){
+      .wrap{width:min(100% - 32px,1240px)}
+      .navlinks{display:none}
+      .hero{min-height:78vh;padding:50px 0 80px}
+      .hero-bottom,.section-head,.about,footer{display:block}
+      .hero-bottom .dot{margin-top:30px}
+      .hero-bottom .cta{margin-bottom:25px}
+      section{padding:80px 0}
+      .section-note{margin-top:18px}
+      .service{grid-template-columns:35px 1fr 20px;gap:12px}
+      .service p{font-size:12px}
+      .projects{grid-template-columns:1fr}
+      .project,.project:nth-child(3){grid-column:auto;min-height:300px}
+      .about-copy{margin-top:35px}
+      footer span{display:block;margin-top:10px}
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="logo" href="#">VITAMINE J<span style="color:var(--orange)">.</span></a>
+      <div class="navlinks">
+        <a href="#expertise">Expertise</a>
+        <a href="#projets">Projets</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="wrap hero" style="border:0">
+      <div class="eyebrow">Communication · Branding · Contenu</div>
+      <h1>Donner un peu<br>de <span>vitamine</span><br>à votre marque.</h1>
+      <div class="hero-bottom">
+        <div>
+          <p class="intro">Stratégie, communication, branding et création de contenu pour des marques qui veulent être claires, vivantes et reconnaissables.</p>
+          <a class="cta" href="#contact">Parlons de votre projet ↗</a>
+        </div>
+        <div class="dot">J.</div>
+      </div>
+    </section>
+
+    <section class="wrap manifesto">
+      <p>Une bonne communication,<br>ce n’est pas faire <em>plus.</em><br>C’est faire <em>mieux.</em></p>
+    </section>
+
+    <section id="expertise" class="wrap">
+      <div class="section-head">
+        <div class="section-title">Ce qu’on peut faire ensemble</div>
+        <div class="section-note">Des idées, une direction et des contenus qui donnent de la cohérence à votre marque — sans la faire rentrer dans une case.</div>
+      </div>
+      <div class="services">
+        <div class="service">
+          <div class="num">01</div><div><h3>Faire émerger</h3><p>Positionnement · plateforme de marque · identité</p></div><div class="arrow">↗</div>
+        </div>
+        <div class="service">
+          <div class="num">02</div><div><h3>Faire vivre</h3><p>Communication · réseaux sociaux · contenus</p></div><div class="arrow">↗</div>
+        </div>
+        <div class="service">
+          <div class="num">03</div><div><h3>Faire comprendre</h3><p>Messages · storytelling · stratégie éditoriale</p></div><div class="arrow">↗</div>
+        </div>
+        <div class="service">
+          <div class="num">04</div><div><h3>Faire grandir</h3><p>Campagnes · lancements · accompagnement</p></div><div class="arrow">↗</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="wrap">
+      <div class="section-head">
+        <div class="section-title">Quelques projets vitaminés</div>
+        <div class="section-note">Une sélection de projets de communication, de branding et de contenu.</div>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="project-label">Identité · Communication · Digital</div>
+          <h3>Annemasse<br>Notre Avenir</h3>
+        </article>
+        <article class="project">
+          <div class="project-label">Branding · Contenu</div>
+          <h3>Projet<br>à venir</h3>
+        </article>
+        <article class="project">
+          <div class="project-label">Stratégie · Social media</div>
+          <h3>Projet<br>à venir</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="apropos" class="wrap">
+      <div class="about">
+        <h2>Derrière<br>Vitamine J,<br>il y a Justine.</h2>
+        <div class="about-copy">
+          <p>Plus de 10 ans à imaginer des stratégies, raconter des histoires et construire des communications de marque.</p>
+          <p>Aujourd’hui, j’aime surtout les projets qui ont quelque chose à raconter — et les marques qui n’ont pas envie de communiquer comme tout le monde.</p>
+          <p class="signature">Paris → Haute-Savoie → Genève</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Besoin d’un<br>petit boost&nbsp;?</h2>
+        <a class="cta" href="mailto:bonjour@vitaminej.com">Parlons de votre projet ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 Vitamine J.</span>
+    <span>Communication · Branding · Contenu</span>
+  </footer>
+</body>
+</html>
